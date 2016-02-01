@@ -26,7 +26,7 @@ Compatible with Advanced Custom Fields v5/Pro
 Lots of reasons! Though there's no such thing as a "taxonomy archive", you might want to display all terms in a selected taxonomy as a list of links, for example.
 
 2. Why can't I select multiple terms?
-That's not how this is built. There is a multi-select taxonomy term ACF plugin out there already that you can use to select multiple terms from multiple taxonomies, or use ACF's built in Taxonomy field to select multiple terms from a single taxonomy.
+That's not how this is built. There is a [multi-select taxonomy term ACF plugin out there already](https://github.com/reyhoun/acf-multi-taxonomy-chooser) that you can use to select multiple terms from multiple taxonomies, or use ACF's built in Taxonomy field to select multiple terms from a single taxonomy.
 
 == Screenshots ==
 
