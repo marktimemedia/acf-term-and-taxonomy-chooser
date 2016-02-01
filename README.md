@@ -15,6 +15,15 @@ When using the field in the editor, it will be a drop menu that lets you select 
 Compatible with Advanced Custom Fields v5/Pro
 
 
+### FAQ
+
+1. Why would I want to use a taxonomy instead of a term?
+Lots of reasons! Though there's no such thing as a "taxonomy archive", you might want to display all terms in a selected taxonomy as a list of links, for example.
+
+2. Why can't I select multiple terms?
+That's not how this is built. There is a multi-select taxonomy term ACF plugin out there already that you can use to select multiple terms from multiple taxonomies, or use ACF's built in Taxonomy field to select multiple terms from a single taxonomy.
+
+
 ### Installation
 
 1. Copy the `acf-taxonomy-chooser` folder into your `wp-content/plugins` folder
