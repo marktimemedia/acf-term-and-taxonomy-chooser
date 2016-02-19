@@ -294,7 +294,7 @@ class acf_field_taxonomy_chooser extends acf_field {
     	// loop through values and add them as options
     	if( !empty($field['choices']) ) {
 
-    	    foreach( $field['choices'] as $k => $v ) {
+    	    foreach( $field['choices'] as $k => $v ) { // allowed taxonomies
 
    		         if( is_array($v) ){
 
@@ -304,12 +304,14 @@ class acf_field_taxonomy_chooser extends acf_field {
     	            if( !empty($v) ) {
 
     	                foreach( $v as $k2 => $v2 ) {
+
+    	                	$strip_v2_hyphen = preg_replace( '#-\s?#', '', $v2 ); // Child categories have hyphens before the name, we need to remove them in order to match them
     	                	
     	                	if ($field['type_value']) { // value = term ID
 
     	                		foreach ($terms as $key => $val) {
 
-    	                			if ($val->name == $v2 ) {
+    	                			if ($val->name == $strip_v2_hyphen ) {
 
     	                			    $els[] = array( 'type' => 'option', 'value' => $val->term_id, 'label' => $v2 , 'selected' => $slct = ($val->term_id == $field['value'] ? "selected": "") );
 
@@ -325,11 +327,13 @@ class acf_field_taxonomy_chooser extends acf_field {
     	                	}
 
     	                	$choices[] = $k2;
+
     	                }
 
     	            }
 
     	            $els[] = array( 'type' => '/optgroup' );
+
 
     	        } else { // value = Taxonomy Slug
 
