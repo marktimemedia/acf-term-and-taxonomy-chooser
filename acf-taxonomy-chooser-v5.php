@@ -416,11 +416,6 @@ class acf_field_taxonomy_chooser extends acf_field {
         wp_register_script( 'acf-input-taxonomy-chooser', "{$dir}js/input.js" );
         wp_enqueue_script('acf-input-taxonomy-chooser');
 
-
-        // register & include CSS
-        wp_register_style( 'acf-input-taxonomy-chooser', "{$dir}css/input.css" ); 
-        wp_enqueue_style('acf-input-taxonomy-chooser');	
-
     }
 	
 	
