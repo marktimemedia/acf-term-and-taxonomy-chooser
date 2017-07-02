@@ -377,7 +377,6 @@ class acf_field_taxonomy_chooser extends acf_field {
         	                $el['selected'] = 'selected';
 
          	           }
-        	            echo acf_esc_attr( $el );
         	            echo '<option ' . acf_esc_attr( $el ) . '>' . $label . '</option>';
 
         	        } else {
