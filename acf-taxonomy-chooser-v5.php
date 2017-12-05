@@ -189,12 +189,12 @@ class acf_field_taxonomy_chooser extends acf_field {
 	        	$terms = array_merge($terms, get_terms( $v1, array( 'hide_empty' => false ) ) );
 	            foreach( $taxonomies as $k2 => $v2 ) {
 	                if( $v1 == $k2 ) {
-	                    $field['choices'][$k1] = $v2;
+	                    $slug_name[$k1] = $v2;
 	                }
 	            }
 	        }
 	  
-	        foreach( $field['choices'] as $k1 => $v1 ) {
+	        foreach( $slug_name as $k1 => $v1 ) {
 	            foreach( $taxonomy_terms as $k2 => $v2 ) {
 	                if( $v1 == $k2 ) {
 	                    $selected_taxonomies[$v1] = $taxonomy_terms[$k2];
@@ -215,14 +215,13 @@ class acf_field_taxonomy_chooser extends acf_field {
    			}
        	}
        
-        $field['choices'] = $selected_taxonomies;
-
+        $slug_name = $selected_taxonomies;
 
         // add empty value (allows '' to be selected)
         if( empty($field['value']) ){
 
             $field['value'] = '';
-            $field['value']['cat']	 = 	'';
+            //$field['value']['cat']	 = 	'';
         }
 
 
@@ -292,9 +291,9 @@ class acf_field_taxonomy_chooser extends acf_field {
         $choices = array();
 
     	// loop through values and add them as options
-    	if( !empty($field['choices']) ) {
+    	if( !empty($slug_name) ) {
 
-    	    foreach( $field['choices'] as $k => $v ) { // allowed taxonomies
+    	    foreach( $slug_name as $k => $v ) { // allowed taxonomies
 
    		         if( is_array($v) ){
 
