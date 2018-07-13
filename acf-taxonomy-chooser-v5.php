@@ -186,7 +186,12 @@ class acf_field_taxonomy_chooser extends acf_field {
 
        	if( $field['tax_type'] == 'Term' ){ // select terms
        		 foreach( $slug_name as $k1 => $v1 ) {
-	        	$terms = array_merge($terms, get_terms( $v1, array( 'hide_empty' => false ) ) );
+		
+	            $found_terms = get_terms( $v1, array( 'hide_empty' => false ));
+		    if (!empty($found_terms) && is_array($found_terms)) {
+			$terms = array_merge($terms, $found_terms);
+		    }
+			 
 	            foreach( $taxonomies as $k2 => $v2 ) {
 	                if( $v1 == $k2 ) {
 	                    $slug_name[$k1] = $v2;
@@ -376,7 +381,6 @@ class acf_field_taxonomy_chooser extends acf_field {
         	                $el['selected'] = 'selected';
 
          	           }
-        	            echo acf_esc_attr( $el );
         	            echo '<option ' . acf_esc_attr( $el ) . '>' . $label . '</option>';
 
         	        } else {
