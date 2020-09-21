@@ -4,7 +4,7 @@
  * Plugin Name: Advanced Custom Fields: Taxonomy Chooser
  * Plugin URI: https://github.com/reyhoun/acf-taxonomy-chooser
  * Description: Choose from any taxonomy or term
- * Version: 1.2
+ * Version: 1.3
  * Author: Marktime Media
  * Author URI: http://marktimemedia.com
  * License: GPLv2 or later
